@@ -1,0 +1,243 @@
+:root {
+    --bg: #416bd4;
+    --surface: #ffffff;
+    --border: #e2e6ee;
+    --text: #1f2937;
+    --acciparte: #55FF9E;
+    --primary: #293658;
+    --primary-hover: #2150d0;
+    --danger: #dc2626;
+    --danger-bg: #fee2e2;
+    --radius: 8px;
+    --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.04);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color-scheme: light;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+h1 {
+    margin: 0 0 4px;
+    font-size: 22px;
+}
+
+.muted {
+    color: var(--primary);
+    margin: 0;
+    font-size: 14px;
+}
+
+
+.auth-screen {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px;
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.card label {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    gap: 6px;
+}
+
+input,
+select {
+    font: inherit;
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(44, 95, 239, 0.15);
+}
+
+button,
+.button {
+    font: inherit;
+    font-weight: 500;
+    padding: 9px 16px;
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #55FF9E;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover:not(:disabled),
+.button:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.button.secondary {
+    background: var(--primary);
+    color: var(--acciparte);
+
+}
+
+.button.secondary:hover {
+    background: var(--primary-hover);
+}
+
+.error {
+    background: var(--danger-bg);
+    color: var(--danger);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.field-error {
+    color: var(--danger);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.hint {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    font-size: 12px;
+    color: var(--primary);
+}
+
+.hint ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+}
+
+
+.app-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+
+.reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.reports-table th,
+.reports-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.reports-table th {
+    background: #f9fafc;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+.reports-table tr:last-child td {
+    border-bottom: none;
+}
+
+.reports-table tr:hover td {
+    background: #fafbfd;
+}
+
+.empty {
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    color: var(--primary);
+}
+
+
+.form {
+    max-width: 520px;
+}
+
+.stepper {
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.step {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #eef1f7;
+}
+
+.step.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
