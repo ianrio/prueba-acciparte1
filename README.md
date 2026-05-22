@@ -58,9 +58,11 @@ Tenant: Globex ; User: `admin@globex.com`  Pass:  `globex1234` ;
 
 ## 3. Modelo de datos
 
-Relación 1:N de los tenants a usuarios y estos a los reportes
+Tres tablas: tenants, users y reports. Relación 1:N de los tenants a usuarios y de estos a los reportes
 
 La id de los tennts está presente en todas, de forma que solo puedan verse bajo el mismo tenant
+
+El tenant_id estápresente tanto en users como en reports. Es la clave de todo el aislamiento: cualquier consulta filtra primero por tenant_id, de forma que un usuario solo puede ver datos de su tennant
 
 ---
 
@@ -93,3 +95,9 @@ El middleware [`authenticate`] verifica el JWT y deja la identidad en `req.auth`
 La capa de servicio de reports recibe el `tenantId` como **primer parámetro** y lo aplica en el `WHERE` de cada consulta.
 
 ---
+
+## Futuras mejoras
+
+-Mejorar el frontend inicial para hacerlo más visual de empresa
+
+-Añadir un sistema de fechas para los informes
